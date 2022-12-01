@@ -218,15 +218,20 @@ class _SettingCardState extends State<SettingCard> {
               Container(
                 height: 25,
                 width: 25,
-                decoration: const BoxDecoration(
-                  color: Colors.green,
+                decoration: BoxDecoration(
+                  color: widget.hasBeenPressed ? Colors.green : Colors.black,
                   shape: BoxShape.circle,
-                ),
-                child: const Center(
-                  child: Icon(
-                    Icons.check,
-                    color: Colors.white,
+                  border: Border.all(
+                    color: widget.hasBeenPressed ? Colors.green : Colors.grey,
                   ),
+                ),
+                child: Center(
+                  child: widget.hasBeenPressed
+                      ? const Icon(
+                          Icons.check,
+                          color: Colors.white,
+                        )
+                      : Container(),
                 ),
               ),
               const SizedBox(width: 16),
